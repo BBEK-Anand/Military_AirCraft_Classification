@@ -4,3 +4,4 @@ Intel ligent algo mini project
   -Anurup Sinha
   -Bibekananda Hati
   -Supratim Manna
+  -souvik Pramanik
