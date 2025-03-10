@@ -1,4 +1,4 @@
-Intel ligent algo mini project
+Intelligent algo mini project
 
 #### Contributors:
     -Sunil Kumar Yadav
