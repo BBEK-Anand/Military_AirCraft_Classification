@@ -1,31 +1,76 @@
-# Aircraft Classification using PyTorchLabFlow 
+# Aircraft Classification using PyTorchLabFlow
 
-Here are the step by step procedure of using PyTorchLabFlow.
+This repository is a demonstration of how to use the **PyTorchLabFlow** framework for organizing, managing, and running deep‑learning experiments. The demo applies this framework to a military aircraft classification task.
 
-## step 1: create the project folder
+---
 
-see last cell of .setup.ipynb file, we have given a project name, AirCraft_Classy and the function setup_project creates the internal file structure inside the folderas the project name, AirCraft_Classy.
+## Workflow Overview
 
-## step 2: design components
+### Step 1: Create the Project Folder
 
-To design the models or other components,  we used vs code  and Jupyter notebook(`designing.ipynb`) parallely, coding in vs code for different comoponet in `./MyCompDir/`  and using it in `designing.ipynb` just by dictionary representation of the components. 
+In the last cell of `.setup.ipynb`, you call `setup_project()` with the project name `MilitaryAircraftClassification`. This creates the internal folder structure inside the directory `MilitaryAircraftClassification`.
 
-## Initiating a pipeline
+### Step 2: Design Components
 
-after designing components  and  debuging etc, we  congigured  pipelines  in `./ppl.ipynb` with a unique pplid(`trl*`)
+Use VS Code and a Jupyter notebook (`designing.ipynb`) in parallel:
 
-## training and observation
+* Write component code (models, data loaders, utilities) inside `./MyCompDir/`.
+* In `designing.ipynb`, import and assemble components via dictionary representations for rapid experimentation.
 
-And then trained them in `./Training....ipynb` where per epoch metrics are  printed as we used  tqdm, in runnig loop.
+### Step 3: Initiate Pipelines
 
-during training we have monitored real time performance of running experiemnts and completed experiements  in `./Observe.ipynb`
+After components are debugged, configure pipelines in `./ppl.ipynb`. Each pipeline is given a unique ID (e.g., `trl*`). You define how your components are connected, hyper‑parameters, and execution logic.
 
-## for corupted pipelines
+### Step 4: Training & Observation
 
-for corupted/ incompatible pipelinhes we  removed teh  sqlite entry for pipelines  in `./Ops.ipynb`,  it also used to stop the training pipeline using `PipeLine.stop_running` 
+* Training is done in `./Training.ipynb`, where per‑epoch metrics are printed (via `tqdm`) inside the training loop.
+* Real‑time monitoring and review of running/completed experiments are done in `./Observe.ipynb`.
 
-## Analysis
+### Step 5: Handling Corrupted Pipelines
 
-In `Ana.ipynb` we used filtering,  and  finding  pipelines that shares same components. Also 1st level experiment details and  status  are there
+In `./Ops.ipynb`, you can manage problematic pipelines:
+
+* Remove incompatible or corrupted pipeline entries from the SQLite database.
+* Stop a running pipeline using `PipeLine.stop_running`.
+
+### Step 6: Analysis
+
+Use `Ana.ipynb` to analyse your experiments:
+
+* Filter pipelines, locate those that share the same components
+* View first‑level experiment details and status
+* Generate summary comparisons across experiments.
+
+---
+
+## Dataset Directory Instruction
+
+Place the **training split** of the [Kaggle dataset](https://www.kaggle.com/datasets/a2015003713/militaryaircraftdetectiondataset?select=crop) into the designated data directory inside the project.
+For example:
+
+```
+AirCrafts_data/
+    └── Training/             ← insert the training split here
+        ├── class1/
+        ├── class2/
+        └── …
+    └── Valid/             ← insert the vlidation split here
+        ├── class1/
+        ├── class2/
+        └── …
+```
 
 
+## 🔧 Notes
+
+* `./MyCompDir/`: Contains reusable and customizable component source code (models, dataset, loss  and  metric function etc.)
+* `./ProjDir/MilitaryAircraftClassification/`: This directory is auto-created by `lab.create_project()` during [Step 1](#step1-create-the-project-folder). It stores:
+
+  * Pipeline definitions
+  * Logs & metrics
+  * Checkpoints & artifacts
+  * Experiment metadata (SQLite database)
+
+* The dataset is **not included** in the repository to keep the repo size minimal. Users are expected to download the dataset separately and place it in the appropriate directory as shown [above](#dataset-directory-structure).
+
+* Although **PyTorchLabFlow** supports saving model weights at every epoch, this demo retains **only the final epoch's checkpoint** to reduce storage overhead.
