@@ -1,9 +1,0 @@
-{
-    "accuracy_loc": "Libs.accuracies.MultiAcc",
-    "loss_loc": "Libs.losses.CrossEn",
-    "optimizer_loc": "Libs.optimizers.OptAdamax",
-    "train_data_src": "../DataSets/AirCrafts_2/Training/",
-    "valid_data_src": "../DataSets/AirCrafts_2/Test/",
-    "train_batch_size": 32,
-    "valid_batch_size": 32
-}
