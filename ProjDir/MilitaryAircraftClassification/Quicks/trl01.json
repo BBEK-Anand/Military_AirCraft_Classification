@@ -1,0 +1,32 @@
+{
+    "last": {
+        "epoch": 0,
+        "train_accuracy": 0,
+        "train_auroc": 0,
+        "train_f1score": 0,
+        "train_auprc": 0,
+        "train_loss": 0,
+        "train_duration": 0,
+        "val_accuracy": 0,
+        "val_auroc": 0,
+        "val_f1score": 0,
+        "val_auprc": 0,
+        "val_loss": 10000.0,
+        "val_duration": 0
+    },
+    "best": {
+        "epoch": 0,
+        "train_accuracy": 0,
+        "train_auroc": 0,
+        "train_f1score": 0,
+        "train_auprc": 0,
+        "train_loss": 0,
+        "train_duration": 0,
+        "val_accuracy": 0,
+        "val_auroc": 0,
+        "val_f1score": 0,
+        "val_auprc": 0,
+        "val_loss": 10000.0,
+        "val_duration": 0
+    }
+}

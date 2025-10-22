@@ -1,0 +1,63 @@
+{
+    "pplid": "trl03",
+    "args": {
+        "dataset": {
+            "loc": "my_datasets.DS1",
+            "args": {}
+        },
+        "model": {
+            "loc": "my_models.EffiB3",
+            "args": {
+                "dropout": 0.4,
+                "fine_tune_last": 20,
+                "pre_trained_path": "./preTraineds/efficientnet_b3_rwightman-cf984f9c.pth"
+            }
+        },
+        "loss": {
+            "loc": "my_losses.CrossEn",
+            "args": {}
+        },
+        "optimizer": {
+            "loc": "my_optimizers.OptAdam",
+            "args": {
+                "learning_rate": 0.001
+            }
+        },
+        "metrics": {
+            "accuracy": {
+                "loc": "my_metrics.Acc",
+                "args": {}
+            },
+            "auroc": {
+                "loc": "my_metrics.AUPRC",
+                "args": {
+                    "average": "macro",
+                    "multi_class": "ovr"
+                }
+            },
+            "f1score": {
+                "loc": "my_metrics.F1Score",
+                "args": {
+                    "average": "macro"
+                }
+            },
+            "auprc": {
+                "loc": "my_metrics.AUROC",
+                "args": {
+                    "average": "macro"
+                }
+            }
+        },
+        "train_data_src": "./AirCrafts_data/Training/",
+        "val_data_src": "./AirCrafts_data/Valid/",
+        "train_batch_size": 32,
+        "val_batch_size": 32
+    },
+    "used": "",
+    "best": {
+        "epoch": 0
+    },
+    "last": {
+        "epoch": 0
+    }
+}

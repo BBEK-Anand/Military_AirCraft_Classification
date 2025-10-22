@@ -1,0 +1,1 @@
+epoch,train_accuracy,train_auroc,train_f1score,train_auprc,train_loss,train_duration,val_accuracy,val_auroc,val_f1score,val_auprc,val_loss,val_duration

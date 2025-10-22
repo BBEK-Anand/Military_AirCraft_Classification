@@ -1,0 +1,17 @@
+{
+    "project_name": "MilitaryAircraftClassification",
+    "project_dir": "/mnt/work/stdML/PTLF/MAcC/ProjDir",
+    "component_dir": "/mnt/work/stdML/PTLF/MAcC/MyCompDir",
+    "metrics": [
+        "accuracy",
+        "auroc",
+        "f1score",
+        "auprc"
+    ],
+    "strategy": {
+        "monitor": "val_loss",
+        "mode": "min"
+    },
+    "data_path": "/mnt/work/stdML/PTLF/MAcC/ProjDir/MilitaryAircraftClassification",
+    "setting_path": "/mnt/work/stdML/PTLF/MAcC/ProjDir/MilitaryAircraftClassification/MilitaryAircraftClassification.json"
+}
