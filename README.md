@@ -61,7 +61,7 @@ AirCrafts_data/
 ```
 
 
-## 🔧 Notes
+## Notes
 
 * `./MyCompDir/`: Contains reusable and customizable component source code (models, dataset, loss  and  metric function etc.)
 * `./ProjDir/MilitaryAircraftClassification/`: This directory is auto-created by `lab.create_project()` during [Step 1](#step1-create-the-project-folder). It stores:
@@ -71,6 +71,6 @@ AirCrafts_data/
   * Checkpoints & artifacts
   * Experiment metadata (SQLite database)
 
-* The dataset is **not included** in the repository to keep the repo size minimal. Users are expected to download the dataset separately and place it in the appropriate directory as shown [above](#dataset-directory-structure).
+* The dataset is **not included** in the repository to keep the repo size minimal. Users are expected to download the dataset separately and place it in the appropriate directory as shown [Dataset Directory Instruction](#dataset-directory-structure).
 
 * Although **PyTorchLabFlow** supports saving model weights at every epoch, this demo retains **only the final epoch's checkpoint** to reduce storage overhead.
